@@ -31,14 +31,14 @@ namespace cg
 	class ClearRenderTarget
 	{
 	public:
-		ClearRenderTarget(unsigned short width, unsigned short height);
+		ClearRenderTarget(unsigned width, unsigned height);
 		virtual ~ClearRenderTarget();
 
 		void Clear();
 		void Save(std::string filename) const;
 
 	protected:
-		void SetPixel(unsigned short x, unsigned short y, color color);
+		void SetPixel(unsigned x, unsigned y, color color);
 
 		unsigned short height;
 		unsigned short width;

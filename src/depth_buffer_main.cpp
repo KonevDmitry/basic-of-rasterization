@@ -14,7 +14,6 @@ int main(int argc, char* argv[])
 
         render->Save("results/depth_buffer.png");
 
-        // Just show the resulted image
         system("start results/depth_buffer.png");
     }
     catch (std::exception & e)

@@ -4,11 +4,11 @@
 #include "draw_line.h"
 
 #include <linalg.h>
-using namespace linalg::aliases;
-
 #include <iostream>
 #include <filesystem>
 
+using namespace linalg::aliases;
+using namespace linalg::ostream_overloads;
 
 namespace cg
 {
@@ -16,6 +16,7 @@ namespace cg
 	struct face
 	{
 		float4 vertexes[3];
+		unsigned primitive_id;
 	};
 
 	class ObjParser
@@ -34,6 +35,12 @@ namespace cg
 
 	};
 
+	struct ConstantBuffer {
+		float4x4 World;
+		float4x4 View;
+		float4x4 Projection;
+	};
+
 	class Projections : public LineDrawing
 	{
 	public:
@@ -44,7 +51,10 @@ namespace cg
 
 	protected:
 		ObjParser* parser;
-
+		ConstantBuffer cb;
+		float4 VertexShader(float4 vertex);
+		void Rasterizer(face face);
+		virtual void DrawTriangle(face face);
 	};
 
 }

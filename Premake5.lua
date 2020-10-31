@@ -18,7 +18,6 @@ workspace "Basics of rasterization"
    targetdir ("bin/%{prj.name}/%{cfg.longname}")
    objdir ("obj/%{prj.name}/%{cfg.longname}")
 
-
 project "01. Clear render target"
    kind "ConsoleApp"
       includedirs { "src/" }
@@ -27,7 +26,6 @@ project "01. Clear render target"
       files { "src/clear_rendertarget.h", "src/clear_rendertarget.cpp" }
       files { "src/clear_rendertarget_main.cpp" }
 
---[[
 project "02. Draw line"
    kind "ConsoleApp"
       includedirs { "src/" }
@@ -75,4 +73,3 @@ project "05. Depth buffer"
       files { "src/triangle_rasterization.h", "src/triangle_rasterization.cpp" }
       files { "src/depth_buffer.h", "src/depth_buffer.cpp" }
       files { "src/depth_buffer_main.cpp" }
-]]--
